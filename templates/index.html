@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Boggle
+{% endblock %}
+
+{% block content %}
+<table id="game">
+    {% for row in board %}
+    <tr>
+        {% for letter in row %}
+        <td class="letter">{{letter}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+
+<form id="guess-form">
+    <label for="guess">Guess a word: </label>
+    <input type="text" name="guess" id="guess" placeholder="Guess"> <br/>
+    <button>Make guess</button>
+</form>
+
+<section id="results">
+    <p><strong>Guess result:</strong> <span id="result"></span></p>
+    <p><strong>Score:</strong> <span id="score">0</span></p>
+    <strong><p id="timer">Time remaining: 60 seconds</p></strong>
+    <strong><p>High score: <span id="high-score">{{high_score}}</span></p></strong>
+</section>
+{% endblock %}
