@@ -30,7 +30,7 @@ def update_stats():
     """
     Increments the number of games this user has played.
     Check if the score is a new high score.
-    Return JSON that passes back data for the high score.
+    Return JSON that passes back data about the high score.
     """
     games_played = session.get('games_played', 0) + 1
     session['games_played'] = games_played
