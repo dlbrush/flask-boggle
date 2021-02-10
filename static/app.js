@@ -1,4 +1,4 @@
 $(function() {
-    const boggle = Boggle.startGame()
+    const boggle = new Boggle()
     $('#guess-form').on('submit', boggle.handleGuess);
 });
